@@ -1,0 +1,145 @@
+.hero {
+    background-image: url("../assets/features/hero-background.png");
+    background-size: contain;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    min-height: 750px;
+
+    & .content-hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        text-align: center;
+    }
+
+    & h1,
+    p {
+        max-width: 440px;
+
+    }
+
+    & h1,
+    h2,
+    p {
+        color: var(--text-title);
+    }
+
+    & h2 {
+        font: var(--subtitle);
+        line-height: 40px;
+
+        max-width: 600px;
+    }
+}
+
+.info {
+    & .content-info {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        text-align: center;
+
+        & h2 {
+            color: var(--text-body);
+            max-width: 900px;
+            line-height: 60px;
+
+            & strong {
+                color: var(--blue-light);
+            }
+        }
+    }
+}
+
+.content-info {
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 7.5rem;
+
+
+    & .icons-feat {
+        display: flex;
+        justify-content: space-between;
+
+        width: 900px;
+    }
+
+
+    & .icons-book {
+        width: 5.5rem;
+        height: 5.5rem;
+    }
+
+    #icons-spellbook {
+        rotate: 20deg;
+
+        animation: iconUp 100ms forwards;
+        animation-timeline: view();
+    }
+
+    #icons-planchette {
+        rotate: 95deg;
+
+        animation: iconUp 200ms forwards;
+        animation-timeline: view();
+    }
+
+    #icons-crystal-ball {
+        rotate: -30deg;
+
+        animation: iconUp 300ms;
+        animation-timeline: view();
+
+    }
+}
+
+.autoShow {
+    animation: text-appear both;
+    animation-timeline: view();
+    animation-range: entry 10% cover 100vh;
+}
+
+@keyframes iconUp {
+
+    0%,
+    10% {
+        opacity: 0;
+        scale: 0;
+    }
+
+    20%,
+    40% {
+        opacity: 0.5;
+        scale: 0.5;
+    }
+
+    50%,
+    70% {
+        opacity: 1;
+        scale: 1.1;
+    }
+
+    80%,
+    100% {
+        scale: 1;
+    }
+}
+
+@keyframes text-appear {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.3;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

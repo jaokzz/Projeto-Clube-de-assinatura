@@ -1,0 +1,55 @@
+header .top {
+    & .header-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 3.5rem 10rem;
+        margin: 0;
+
+    }
+
+    & a.btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 5.5625rem;
+        height: 2.5rem;
+
+        border-radius: 8px;
+
+        background-color: var(--pink-dark);
+        color: var(--text-title);
+        text-decoration: none;
+
+        font: var(--button);
+
+        position: relative;
+        overflow: hidden;
+        z-index: 0;
+
+
+        &:hover::before {
+            scale: 1;
+        }
+
+        &::before {
+            content: "";
+
+            width: inherit;
+            height: inherit;
+            border-radius: inherit;
+
+            background-color: var(--pink-base);
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+
+            scale: 0;
+            transition: scale 400ms;
+        }
+    }
+}
