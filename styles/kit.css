@@ -29,7 +29,7 @@
         height: 100%;
         position: relative;
 
-        border: 2px solid rgb(255, 243, 249);
+        /* border: 2px solid rgb(255, 243, 249); */
 
         & .content {
             display: block;
@@ -37,7 +37,7 @@
             max-width: 29.1875rem;
             height: 38.5625rem;
 
-            border: 2px solid deeppink;
+            /* border: 2px solid deeppink; */
         }
 
         & img {
@@ -45,24 +45,62 @@
             /* width: 100%; */
         }
 
+        .kit-items .content img[src*="book.png"] {
+            position: relative;
+            z-index: 30;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 29.1875rem;
+            pointer-events: auto;
+        }
+
+        & img[src*="book.png"] {
+            z-index: 1;
+        }
+
         & img[src*="yellow.png"] {
-            top: 21%;
-            left: 55%;
+            top: 11%;
+            left: 54%;
+
+            /* animation: slideOutYell 700ms ease both; */
         }
 
         & img[src*="purple.png"] {
-            top: 21%;
-            left: 55%;
+            top: 11%;
+            left: 54%;
+            z-index: -1;
+
+            /* animation: slideOutPurp 700ms ease both; */
         }
 
         & img[src*="pin.png"] {
             top: 64%;
-            left: 34%;
+            left: 35%;
 
+            /* animation: slideOutPin 700ms ease both; */
         }
 
+        & img[src*="circle.svg"] {
+            top: 64%;
+            left: 37%;
 
+            /* animation: slideOutPinText 700ms ease both; */
+        }
 
+        & img[src*="big.svg"] {
+            top: 62%;
+            left: 49%;
+
+            /* animation: slideOutMarkText 700ms ease both; */
+        }
+
+        & img[src*="straight.svg"] {
+            top: 4%;
+            left: 37%;
+
+            /* animation: slideOutBookText 700ms ease both; */
+
+        }
 
         & :nth-child(1) {
             width: 29.1875rem;
@@ -76,12 +114,79 @@
         & :nth-child(3),
         & :nth-child(4) {
             width: 10.75rem;
+            height: 33.5rem;
         }
+    }
+}
+
+.kit-items .content:hover img[src*="bookmark-yellow.png"] {
+    animation: slideOutYell 700ms ease-in-out 0ms forwards;
+}
+
+.kit-items .content:hover img[src*="bookmark-purple.png"] {
+    animation: slideOutPurp 700ms ease-in-out 80ms forwards;
+}
+
+.kit-items .content:hover img[src*="pin.png"] {
+    animation: slideOutPin 720ms ease-in-out 140ms forwards;
+}
+
+.kit-items .content:hover img[src*="circle.svg"] {
+    animation: slideOutPinText 720ms ease-in-out 160ms forwards;
+}
+
+.kit-items .content:hover img[src*="big.svg"],
+.kit-items .content:hover img[src*="arrow-big.svg"] {
+    animation: slideOutMarkText 760ms ease-in-out 180ms forwards;
+}
+
+.kit-items .content:hover img[src*="arrow-straight.svg"] {
+    animation: slideOutBookText 700ms ease-in-out 200ms forwards;
+}
 
 
 
+/* Book Animation  */
 
+@keyframes slideOutBookText {
+    100% {
+        transform: translate(-16.5rem, -5.1875rem);
+    }
+}
 
+/* Marca Textos Animation */
 
+@keyframes slideOutYell {
+    100% {
+        transform: translate(6.875rem, -9.0625rem);
+        rotate: 9deg;
+    }
+}
+
+@keyframes slideOutPurp {
+    100% {
+        transform: translate(12.5rem, -5.9375rem);
+        rotate: 16deg;
+    }
+}
+
+@keyframes slideOutMarkText {
+    100% {
+        transform: translate(12.1875rem, 8.75rem);
+    }
+}
+
+/* Pin Animation  */
+
+@keyframes slideOutPin {
+    100% {
+        transform: translate(-9.5625rem, .3125rem);
+        rotate: -12deg;
+    }
+}
+
+@keyframes slideOutPinText {
+    100% {
+        transform: translate(-15.4375rem, -5rem);
     }
 }
