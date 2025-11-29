@@ -25,7 +25,7 @@
     --title-lg: bold 48px/auto;
     --title-md: bold 40px/auto;
     --title-sm: bold 32px/auto;
-    --title-xs: bold 16px/auto;
+    --title-sx: bold 16px/auto;
 
     --subtitle: 500 32px/200%;
 
@@ -58,6 +58,6 @@ body {
     font-family: var(--font-family);
 
     background-color: var(--shape-background);
- 
+
     scroll-behavior: smooth;
 }

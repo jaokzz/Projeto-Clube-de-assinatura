@@ -1,0 +1,332 @@
+.price {
+    background-image: url("../assets/features/pricing-background.png");
+    background-size: contain;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    min-height: 78.125rem;
+
+    &>div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin-top: 10rem;
+
+        & h2 {
+            text-align: center;
+            color: var(--text-title);
+        }
+    }
+
+    & .cardsPrice {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        gap: 1rem;
+    }
+
+    & .mensal,
+    .anual,
+    .semestral {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+
+        width: 18rem;
+        max-width: 100%;
+        height: 26rem;
+        max-height: 100%;
+
+
+        & .starsCards {
+            width: .8781rem;
+        }
+
+        & p {
+            display: flex;
+            gap: .5rem;
+
+            color: var(--text-body);
+
+        }
+    }
+
+    & .mensal,
+    .anual {
+        background-color: var(--shape-base);
+
+        border: 1px solid var(--shape-stroke);
+        border-radius: 1rem;
+        padding: 2rem;
+    }
+
+    & .semestral {
+        background-color: var(--shape-hover);
+        border-radius: 1rem;
+        padding: 2rem;
+    }
+
+    & .titlePrice {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .mensal>div>span,
+    .anual>div>span {
+        color: var(--blue-light);
+        font-weight: bold;
+    }
+
+    .mensal>div>h3,
+    .anual>div>h3 {
+        color: var(--text-title);
+        font-size: 2.8375rem;
+
+        max-height: 14px;
+    }
+
+    .mensal>div>h3>span,
+    .anual>div>h3>span {
+        font-size: 16px;
+    }
+
+    .mensal>div>p,
+    .anual>div>p {
+        color: var(--text-label);
+    }
+
+
+    .semestral .pop {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .semestral .pop>.span1 {
+        color: var(--pink-light);
+        font-weight: bold;
+    }
+
+    .semestral .pop>.span2 {
+        color: var(--text-body);
+        background-color: var(--shape-stroke);
+        font-size: 10px;
+        font-weight: bold;
+
+        padding: 9px 20px;
+        border-radius: 2rem;
+    }
+
+    .semestral :nth-child(2)>h3 {
+        color: var(--text-title);
+        font-size: 2.8375rem;
+
+        max-height: 14px;
+    }
+
+    .semestral :nth-child(2)>h3>span {
+        font-size: 16px;
+    }
+
+    .semestral :nth-child(2) p {
+        top: 40%;
+    }
+
+    .semestral>div> :nth-child(2)>p {
+        color: var(--text-label);
+
+    }
+
+    .bunny {
+        position: absolute;
+        z-index: 1;
+        transform: translateY(-82px);
+    }
+
+    .mensal,
+    .anual {
+        & a.btna {
+            text-decoration: none;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: .75rem 3.2813rem;
+            border-radius: .5rem;
+
+            color: var(--text-title);
+
+            position: relative;
+            overflow: hidden;
+            z-index: 0;
+
+            &:hover::before {
+                transform: scale(1.3);
+            }
+
+            &::before {
+                content: "";
+
+                border-radius: 50%;
+                position: absolute;
+                inset: 0;
+
+                background-color: var(--blue-mid);
+
+                transition: transform .3s ease-in;
+                transform: scale(0);
+                z-index: -1;
+            }
+        }
+    }
+
+
+}
+
+.semestral {
+    z-index: 3;
+
+    & a.btna {
+        text-decoration: none;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: .75rem 3.2813rem;
+        border-radius: .5rem;
+
+        color: var(--text-title);
+
+        position: relative;
+        overflow: hidden;
+        z-index: 0;
+
+        &:hover::before {
+            transform: scale(1.3);
+        }
+
+        &::before {
+            content: "";
+
+            border-radius: 50%;
+            position: absolute;
+            inset: 0;
+
+            background-color: var(--pink-base);
+
+            transition: transform .3s ease-in;
+            transform: scale(0);
+            z-index: -1;
+        }
+    }
+
+}
+
+.mensal,
+.anual {
+    & a {
+        font-weight: bold;
+        background-color: var(--blue-dark);
+
+    }
+}
+
+.semestral {
+    & a {
+        font-weight: bold;
+
+        background-color: var(--pink-dark);
+    }
+}
+
+.anual {
+    position: relative;
+}
+
+.stars-right {
+    position: absolute;
+    transform: translate(360px, 460px);
+
+    animation: cardsSideRight .4s ease-in forwards;
+
+    & :nth-child(1) {
+        width: 35px;
+        transform: translate(-0px, -10px);
+    }
+
+    & :nth-child(2) {
+        width: 20px;
+        transform: translate(-80px, -10px);
+    }
+}
+
+.stars-left {
+    position: absolute;
+    transform: translate(-80px, -20px);
+
+
+    & :nth-child(1) {
+        width: 35px;
+        transform: translate(-25px, -30px);
+    }
+
+    & :nth-child(2) {
+        width: 20px;
+        transform: translate(-80px, 1px);
+    }
+
+}
+
+.price:hover .anual {
+    transform: translate(5px, 75px);
+        rotate: 10deg;
+}
+
+.price:hover .mensal {
+    transform: translate(-5px, 75px);
+        rotate: -10deg;
+}
+
+.anual:hover {
+    transform: translateX(50px);
+}
+
+
+.mensal {
+    transform: translateX(369px);
+    z-index: 0;
+
+    transition: all .6s ease-in-out;
+}
+
+.anual {
+    transform: translateX(-369px);
+    z-index: 0;
+
+    transition: all .6s ease-in-out;
+
+}
+
+/* @keyframes cardsSideMensal {
+    0% {}
+
+    100% {
+        transform: translate(-5px, 75px);
+        rotate: -10deg;
+    }
+}
+
+@keyframes cardsSideAnual {
+    0% {}
+
+    100% {
+        transform: translate(5px, 75px);
+        rotate: 10deg;
+    }
+} */
