@@ -59,13 +59,13 @@
         background-color: var(--shape-base);
 
         border: 1px solid var(--shape-stroke);
-        border-radius: 1rem;
+        border-radius: 1.5rem;
         padding: 2rem;
     }
 
     & .semestral {
         background-color: var(--shape-hover);
-        border-radius: 1rem;
+        border-radius: 1.5rem;
         padding: 2rem;
     }
 
@@ -214,7 +214,7 @@
         &::before {
             content: "";
 
-            border-radius: 50%;
+            border-radius: 30%;
             position: absolute;
             inset: 0;
 
@@ -243,6 +243,8 @@
 
         background-color: var(--pink-dark);
     }
+
+    transition: all 800ms ease;
 }
 
 .anual {
@@ -283,20 +285,16 @@
 
 }
 
-.price:hover .anual {
+/* .price:hover .anual {
     transform: translate(5px, 75px);
-        rotate: 10deg;
+    rotate: 10deg;
 }
 
 .price:hover .mensal {
     transform: translate(-5px, 75px);
-        rotate: -10deg;
-}
+    rotate: -10deg;
 
-.anual:hover {
-    transform: translateX(50px);
-}
-
+} */
 
 .mensal {
     transform: translateX(369px);
@@ -310,10 +308,21 @@
     z-index: 0;
 
     transition: all .6s ease-in-out;
-
 }
 
-/* @keyframes cardsSideMensal {
+.mensal {
+    animation: SideLeft 800ms forwards;
+    animation-timeline: view();
+    animation-range-end: 50%;
+}
+
+.anual {
+    animation: SideRight 800ms forwards;
+    animation-timeline: view();
+    animation-range-end: 50%;
+}
+
+@keyframes SideLeft {
     0% {}
 
     100% {
@@ -322,11 +331,40 @@
     }
 }
 
-@keyframes cardsSideAnual {
+@keyframes SideRight {
     0% {}
 
     100% {
         transform: translate(5px, 75px);
         rotate: 10deg;
     }
-} */
+}
+
+.mensal:hover {
+    transform-origin: left;
+    scale: 1.01;
+
+    filter: drop-shadow(1px 1px 40px var(--blue-dark));
+
+    background-color: var(--shape-stroke);
+}
+
+.semestral:hover {
+    transform: translate(0, -30px);
+    scale: 1.01;
+
+    filter: drop-shadow(1px 1px 40px var(--blue-dark));
+
+    background-color: var(--shape-stroke);
+
+
+}
+
+.anual:hover {
+    transform-origin: right;
+    scale: 1.01;
+    filter: drop-shadow(1px 1px 40px var(--blue-dark));
+
+    background-color: var(--shape-stroke);
+
+}
