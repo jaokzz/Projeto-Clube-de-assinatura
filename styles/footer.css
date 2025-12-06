@@ -1,0 +1,114 @@
+footer {
+    background-image: url("../assets/features/book-trace-background.png");
+    background-size: contain;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    min-height: 450px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    & .footer-content {
+        display: flex;
+        align-items: center;
+
+        justify-content: space-between;
+    }
+
+    & .box-logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+
+        & .social-btn {
+            display: flex;
+            gap: 1rem;
+
+            & a {
+                text-decoration: none;
+
+                display: flex;
+                align-items: center;
+
+                z-index: 2;
+
+                position: relative;
+
+                &::before {
+                    content: "";
+
+                    position: absolute;
+                    width: 40px;
+                    height: 40px;
+                    z-index: -1;
+
+                    inset: -33%;
+                    border-radius: 50%;
+                    background-color: var(--blue-low);
+
+                    transform: scale(0);
+
+                    transition: transform 300ms ease;
+
+                }
+
+                &:hover::before {
+                    transform: scale(1);
+                }
+            }
+
+            & a svg path {
+                fill: var(--blue-base);
+
+                transition: fill 300ms ease;
+            }
+
+            & a:hover svg path {
+                fill: #FFFFFF;
+            }
+        }
+    }
+
+
+    .separator {
+        border: 1px solid var(--shape-stroke);
+        max-width: 300px;
+        width: 100%;
+
+        margin-bottom: 10px;
+    }
+
+    & .box-content {
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+
+        & :nth-child(1),
+        :nth-child(2) {
+            display: flex;
+            flex-direction: column;
+            gap: .7rem;
+
+            & h4 {
+                color: var(--text-body);
+            }
+
+            & a {
+                text-decoration: none;
+                color: var(--blue-light);
+
+                transition: color 500ms ease;
+
+                &:hover {
+                    color: var(--text-body);
+                }
+            }
+        }
+
+    }
+}

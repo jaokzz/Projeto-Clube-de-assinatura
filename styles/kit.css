@@ -54,6 +54,11 @@
             pointer-events: auto;
         }
 
+        .content {
+            filter: drop-shadow(5px 5px 300px var(--pink-dark));
+
+        }
+
         & img[src*="book.png"] {
             z-index: 1;
         }
@@ -75,28 +80,30 @@
 
         & img[src*="pin.png"] {
             top: 64%;
-            left: 35%;
+            left: 5%;
+
 
             /* animation: slideOutPin 700ms ease both; */
         }
 
         & img[src*="circle.svg"] {
             top: 64%;
-            left: 37%;
+            left: 10%;
+
+
 
             /* animation: slideOutPinText 700ms ease both; */
         }
 
         & img[src*="big.svg"] {
             top: 62%;
-            left: 49%;
-
+            left: 46%;
             /* animation: slideOutMarkText 700ms ease both; */
         }
 
         & img[src*="straight.svg"] {
             top: 4%;
-            left: 37%;
+            left: 10%;
 
             /* animation: slideOutBookText 700ms ease both; */
 
